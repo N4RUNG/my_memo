@@ -2,8 +2,9 @@
 # 혹은 문장 앞에 #을 넣어서 따로 주석 처리.
 ''' 작은 따옴표 세 개로 앞 뒤를 둘러싸면
 여러 문장을 한 번에 주석 처리. '''
-# 이제 막 배우기 시작한 뉴비 메모장 ㅠ
-# 모르는 거 생길 때마다 와서 봐야지 헤헤
+# 이제 막 배우기 시작한 뉴비 메모장
+# 모르는 거 생길 때마다 와서 봐야지
+# https://youtu.be/kWiCuklohdY
 
 
 
@@ -204,3 +205,57 @@
 # menu = set(menu)
 # print(menu, type(menu))
 
+
+''' if ( if 조건: ) '''
+# age = int(input("당신은 몇 살이신가요? : "))
+# #
+# if age < 14:
+#     print("어린이입니다.")
+# elif 13 <= age < 18:
+#     print("청소년입니다.")
+# else:
+#     print("성인입니다.")
+
+
+''' for ( for 변수 in [리스트]or(튜플): ) '''
+# num = 1
+# for lotto in (3, 6, 17, 23, 37, 39): # 순차적으로 커지는 숫자는 range()로도 가능함. ( range(1, 6)으로 하면 1~6까지 출력 )
+#     print(f"{num} 번째 당첨 번호는 \'{lotto}\' 입니다.")
+#     num += 1
+
+''' 한 줄 for 문 ( 변수 for 변수 in [리스트]or(튜플) ) '''
+# name = ["python", "c", "java", "kotlin"]
+# name = [a.upper() for a in name]
+# print(name)
+
+''' 이중 한 줄 for 문 ( 변수 for 변수1 in [리스트1]or(튜플1) for 변수2 in [리스트2]or(튜플2) ) '''
+# print("\n".join(f"{num1} × {num2} = {num1*num2}" for num1 in range(2, 10) for num2 in range(1, 10)))
+
+
+''' while ( while 조건: ) '''
+# import time
+# time_num = 10
+# while time_num > 0:
+#     print(str(time_num))
+#     time.sleep(1)
+#     time_num -= 1
+#     if time_num == 0:
+#         print("시간이 다 되었습니다.")
+# #
+# password = 1231
+# input_num = int
+# while password != input_num:
+#     input_num = int(input("비밀번호를 입력하세요 : "))
+
+
+''' continue & break '''
+# jewelry = [2, 4, 7]
+# bomb = [5]
+# for field in range(1, 10):
+#     if field in jewelry:
+#         print(f"{field} 번에서 귀중품을 찾았습니다.")
+#         continue # 코드를 건너뛰고 다음코드를 출력함.
+#     if field in bomb:
+#         print(f"{field} 번에 폭탄이 있었습니다.")
+#         break # 코드 종료
+#     print(f"{field} 번은 아무것도 없습니다.")
