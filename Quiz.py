@@ -129,10 +129,7 @@
 
 # for i in range(1, 6): # 너무 많은 파일을 만들어서 일단 다섯 개로 설정.
 #     with open(f"{str(i)}주차.txt", "w", encoding="utf8") as report_file:
-#         report_file.write(f"- {str(i)} 주차 주간보고 - ")
-#         report_file.write("\n부서 : ")
-#         report_file.write("\n이름 : ")
-#         report_file.write("\n업무 요약 : ")
+#         report_file.write(f"- {str(i)} 주차 주간보고 - \n부서 : \n이름 : \n업무 요약 : ")
 
 
 

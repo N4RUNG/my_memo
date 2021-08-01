@@ -229,7 +229,7 @@
 # print(name)
 
 ''' 이중 한 줄 for 문 ( 변수 for 변수1 in [리스트1]or(튜플1) for 변수2 in [리스트2]or(튜플2) ) '''
-# print("\n".join(f"{num1} × {num2} = {num1*num2}" for num1 in range(2, 10) for num2 in range(1, 10)))
+# print("\n".join(f"{num1} × {num2} = {num1*num2}" for num1 in range(2, 10) for num2 in range(1, 10))) # 구구단
 
 
 ''' while ( while 조건: ) '''
