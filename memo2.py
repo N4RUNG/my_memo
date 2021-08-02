@@ -241,3 +241,53 @@
 #     def __init__(self, name, health, location):
 #         super().__init__(name, health, 0) # super() 를 쓰면 상속해주는 클래스에게 전달함 (self는 안 적음) (다중 상속 시 앞에 있는 부모 클래스에게만 전달)
 #         self.location = location
+
+
+''' 예외 처리 '''
+# try:
+#     print(" :: 나누기 전용 계산기입니다. ::")
+#     nums = []
+#     nums.append(int(input("첫 번째 숫자룰 입력하세요 : ")))
+#     nums.append(int(input("두 번째 숫자를 입력하세요 : ")))
+#     nums.append(nums[0]/nums[1])
+#     print(f"{nums[0]} / {nums[1]} = {nums[2]}")
+# #
+# # try 에서 시도를 했을 때 오류가 나면 except 에서 오류를 찾고 해당된 것을 실행함.
+# except ValueError: # 변수 값에 잘못된 값을 넣어서 생기는 에러
+#     print("잘못된 값입니다.")
+# except ZeroDivisionError: # 0 으로 나눌 때 생기는 에러
+#     print("0으로는 나눌 수 없습니다.")
+# except Exception as err: # 지정 안 했던 에러가 났을 때 출력함.
+#     print(f"에러가 발생하였습니다. ({err})") # as err을 하면 무슨 에러가 떴는지 출력이 됨.
+
+
+''' 사용자 정의 에러 & 에러 발생 시키기 & finally '''
+# class BigNumberError(Exception): # Exception 을 상속받아서 에러를 만들 수 있음.
+#     def __init__(self, msg):
+#         self.msg = msg # 받은 메시지를 저장함.
+#     def __str__(self):
+#         return str(self.msg) # 원하는 메시지를 기본 메시지로 출력시킬 수 있음.
+# #
+# class recieve:
+#     def __init__(self, count):
+#         self.count = count
+#         self.num = int(input(f"{self.count} 번재 숫자를 입력하세요 : "))
+#         if self.num >= 10:
+#             raise BigNumberError(f"입력 값 : {self.num}") # BigNumberError 을 발생시킴
+# #
+# try:
+#     print(" :: 한 자리 숫자용 계산기입니다. ::")
+#     num1 = recieve(1)
+#     num2 = recieve(2)
+#     print(f"{num1.num} / {num2.num} = {num1.num/num2.num}")
+# #
+# except ValueError:
+#     print("잘못된 값입니다!")
+# except BigNumberError as err:
+#     print("한 자리 숫자만 입력해주세요!")
+#     print(err) # 위에서 설정한 메시지를 출력함.
+# except Exception as err:
+#     print(f"에러가 발생하였습니다! ({err})")
+# #
+# finally: # 위의 시도가 성공을 하든 실패를 하든 실행한다. (오류가 나도 실행함(설정한 오류의 뒤에, 설정하지 않은 오류의 앞에 뜸))
+#     print(" :: 계산기를 끝냅니다. ::")

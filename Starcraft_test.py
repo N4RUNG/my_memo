@@ -1,4 +1,5 @@
 import time
+from random import *
 
 class Unit:
     def __init__(self, name, health, speed):
@@ -90,18 +91,21 @@ class Wraith(Fly_Attack_Unit):
             print(f" :: {self.name} :: 클로킹 모드로 해제합니다.")
             self.cloaking = False
 
+# 게임 시작 문구
 def game_start():
     print("[ 게임을 시작합니다. ]")
 
+# 게임 종료 문구
 def game_over():
     print("[ 게임이 끝났습니다. ]")
 
 
 
+# 게임 시작
 game_start()
-
 time.sleep(1)
 
+# 마린 생성
 m1 = Marine()
 time.sleep(0.5)
 m2 = Marine()
@@ -109,16 +113,19 @@ time.sleep(0.5)
 m3 = Marine()
 time.sleep(1)
 
+# 탱크 생성
 t1 = Tank()
 time.sleep(0.5)
 t2 = Tank()
 time.sleep(1)
 
+# 레이스 생성
 w1 = Wraith()
 time.sleep(0.5)
 w2 = Wraith()
 time.sleep(1)
 
+# 편리를 위해 한 번에 이동하기 위해 리스트에 담음
 Attack_Units = []
 Attack_Units.append(m1)
 Attack_Units.append(m2)
@@ -128,14 +135,17 @@ Attack_Units.append(t2)
 Attack_Units.append(w1)
 Attack_Units.append(w2)
 
+# 1시 방향으로 이동함
 for unit in Attack_Units:
     unit.move("1시")
     time.sleep(0.5)
 
+# 탱크의 시즈 모드 개발을 True 로 바꿈
 Tank.seize_developed = True
-print("[ 탱크 시즈 모드 개발이 완료되었습니다. ]")
+print("\n[ 탱크 시즈 모드 개발이 완료되었습니다. ]\n")
 time.sleep(2)
 
+# 마린은 스팀팩을, 탱크는 시즈 모드를, 레이스는 크로킹 모드를 킴
 for unit in Attack_Units:
     if isinstance(unit, Marine):
         unit.steampack()
@@ -147,4 +157,17 @@ for unit in Attack_Units:
         unit.cloaking_mod()
         time.sleep(0.5)
 
+# 공격를 함
+for unit in Attack_Units:
+    unit.attack("1시")
+    time.sleep(0.5)
+time.sleep(0.5)
 
+# 피해를 받음
+for unit in Attack_Units:
+    unit.attacked(randint(10, 41)) # 피해량은 랜덤
+    time.sleep(0.5)
+time.sleep(0.5)
+
+# 게임 종료
+game_over()
